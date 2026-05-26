@@ -14,13 +14,13 @@
 **Developed by Mariam Mohey Ibrahiem Arafa**
 Bachelor of Computer Engineering — Ain Shams University
 
-[🚀 Getting Started](#-getting-started) · [📸 Screenshots](#-application-screenshots) · [⚙️ Architecture](#️-core-architecture) · [🔮 Future Work](#-future-work) · [🤝 Contributing](#-contributing)
+[ Getting Started](#-getting-started) · [ Screenshots](#-application-screenshots) · [ Architecture](#️-core-architecture) · [ Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 📖 Overview
+##  Overview
 
 **Cairo Metro Navigator** is a desktop application that reimagines how transit networks are computed. Instead of using the conventional graph-based approach with BFS or Dijkstra's algorithm, this project models the entire Cairo Metro network as a **continuous string sequence** indexed by a **Generalized Suffix Tree**, built using **Ukkonen's Algorithm** in strict linear time O(N).
 
@@ -28,7 +28,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## ✨ Why This Project Matters
+##  Why This Project Matters
 
 | Traditional Graph Navigation | Cairo Metro Navigator |
 |---|---|
@@ -41,7 +41,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## 🖼️ Application Screenshots
+##  Application Screenshots
 
 ### Splash Screen
 <div align="center">
@@ -91,7 +91,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## ⚙️ Core Architecture
+##  Core Architecture
 
 ### The Suffix Tree Data Engine (`MetroUkkonen`)
 
@@ -132,18 +132,16 @@ When a trip spans two different lines, the engine evaluates **6 major interchang
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
 | Requirement | Version | Download |
 |---|---|---|
 | Qt Framework | **6.10.1** | [qt.io/download](https://www.qt.io/download-open-source) |
-| Compiler | **MinGW 13.1.0 64-bit** | Bundled with Qt installer |
-| CMake | 3.20+ | [cmake.org](https://cmake.org/download/) |
 | CLion IDE | Any recent version | [jetbrains.com/clion](https://www.jetbrains.com/clion/) |
 
-> ⚠️ **Important:** You must install **Qt 6.10.1** with the **MinGW 13.1.0 64-bit** compiler. Using a different version or compiler may cause build failures.
+> ⚠️ **Important:** During Qt installation, make sure to select **MinGW 13.1.0 64-bit** — it is bundled inside the Qt installer, no separate download needed.
 
 ---
 
@@ -217,27 +215,12 @@ Cairo_Metro_Navigator/
 
 ## 🎯 Features
 
-- 🔍 **Real-time autocomplete** — Instant station filtering as you type
-- 🗺️ **Direct route detection** — Single-line trips resolved in O(M) time
-- 🔄 **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
-- ⏱️ **Trip statistics** — Travel time, station count, and fare per query
-- 🔁 **Swap button** — Instantly reverse origin and destination
-- 🖥️ **Clean dark UI** — Qt Widgets with a modern dark green theme
-
----
-
-## 🔮 Future Work
-
-The following enhancements are planned or proposed for future versions:
-
-- **🚇 Cairo Metro Line 4** — Extend the suffix tree corpus to include Line 4 once operational station data is available
-- **🌍 Arabic Language Support** — Full RTL interface with Arabic station names for wider accessibility
-- **📱 Mobile Version** — Port the routing engine to Android/iOS using Qt for Mobile
-- **♿ Accessibility Features** — Step-free route filtering and wheelchair-accessible interchange guidance
-- **🗓️ Real-Time Schedules** — Integrate live timetable data for departure-time-aware routing
-- **🗺️ Visual Map View** — Render routes on an interactive Cairo Metro map diagram
-- **🎟️ Multi-Zone Pricing** — More granular fare calculation based on official Cairo Metro zone rules
-- **📊 Trip History** — Save and review past journeys within the application
+-  **Real-time autocomplete** — Instant station filtering as you type
+-  **Direct route detection** — Single-line trips resolved in O(M) time
+-  **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
+-  **Trip statistics** — Travel time, station count, and fare per query
+-  **Swap button** — Instantly reverse origin and destination
+-  **Clean dark UI** — Qt Widgets with a modern dark green theme
 
 ---
 
@@ -284,6 +267,10 @@ You are free to use, modify, and distribute this project with attribution.
 **Mariam Mohey Ibrahiem Arafa**
 Bachelor of Computer Engineering — Ain Shams University
 GitHub: [@MariamArafa-0](https://github.com/MariamArafa-0)
+
+**Eithar Diaa Amin Abd Al Aziz**
+Bachelor of Computer Engineering — Ain Shams University
+GitHub: [@eithar25](https://github.com/eithar25)
 
 ---
 
