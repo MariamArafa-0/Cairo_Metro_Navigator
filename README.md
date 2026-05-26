@@ -11,37 +11,37 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 ![Algorithm](https://img.shields.io/badge/Algorithm-Ukkonen's_O(N)-green?style=for-the-badge)
 
-**Developed by Mariam Mohey Ibrahiem Arafa**
+**Developed by Mariam Mohey Ibrahiem Arafa**  
 Bachelor of Computer Engineering — Ain Shams University
 
-[ Getting Started](#-getting-started) · [ Screenshots](#-application-screenshots) · [ Architecture](#️-core-architecture) · [ Contributing](#-contributing)
+[🚀 Getting Started](#-getting-started) · [📸 Screenshots](#-application-screenshots) · [🏗️ Architecture](#️-core-architecture) · [🤝 Contributing](#-contributing)
 
 </div>
 
 ---
 
-##  Overview
+## 🗺️ Overview
 
-**Cairo Metro Navigator** is a desktop application that reimagines how transit networks are computed. Instead of using the conventional graph-based approach with BFS or Dijkstra's algorithm, this project models the entire Cairo Metro network as a **continuous string sequence** indexed by a **Generalized Suffix Tree**, built using **Ukkonen's Algorithm** in strict linear time O(N).
+**Cairo Metro Navigator** is a desktop application that reimagines how transit networks are computed. Instead of using the conventional graph-based approach with BFS or Dijkstra's algorithm, this project models the entire Cairo Metro network as a **continuous string sequence** indexed by a **Generalized Suffix Tree**, built using **Ukkonen's Algorithm** in strict linear time $O(N)$.
 
 This is not just a navigation app — it is a proof of concept demonstrating that **string indexing data structures** can outperform traditional graph traversal in certain real-world routing problems, with path retrieval completely decoupled from network density.
 
 ---
 
-##  Why This Project Matters
+## 📈 Why This Project Matters
 
 | Traditional Graph Navigation | Cairo Metro Navigator |
 |---|---|
 | Models stations as vertices, tracks as edges | Models the entire network as a string corpus |
-| Path search: O(V + E) — scales with network size | Path retrieval: O(M) — bound only by output length |
-| Requires re-traversal on every query | All paths pre-indexed in a single O(N) construction pass |
+| Path search: $O(V + E)$ — scales with network size | Path retrieval: $O(M)$ — bound only by output length |
+| Requires re-traversal on every query | All paths pre-indexed in a single $O(N)$ construction pass |
 | Transfer optimization requires additional algorithmic layers | Transfer hub evaluation is native to the routing logic |
 
 > **The core insight:** By treating a transit network as a sequence of integer-encoded station IDs separated by unique terminal tokens, every possible itinerary becomes a suffix already indexed in the tree — making route lookup a direct tree descent rather than a full graph traversal.
 
 ---
 
-##  Application Screenshots
+## 📸 Application Screenshots
 
 ### Splash Screen
 <div align="center">
@@ -91,11 +91,11 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-##  Core Architecture
+## 🏗️ Core Architecture
 
 ### The Suffix Tree Data Engine (`MetroUkkonen`)
 
-The backbone of the application is a **Generalized Suffix Tree** constructed with **Ukkonen's Algorithm**, achieving strict O(N) linear-time indexing of the entire network.
+The backbone of the application is a **Generalized Suffix Tree** constructed with **Ukkonen's Algorithm**, achieving strict $O(N)$ linear-time indexing of the entire network.
 
 ```
 All Metro Lines → Encoded as integer sequences → Concatenated with Separator Guards → Indexed into a single Suffix Tree
@@ -103,9 +103,9 @@ All Metro Lines → Encoded as integer sequences → Concatenated with Separator
 
 **Key components:**
 
-- **Node Compression** — Each node stores integer pointers (`start`/`end`) into a global text array rather than duplicated data, minimizing memory overhead
-- **Suffix Links** — Internal shortcuts enabling O(1) context shifts during tree construction, maintaining the O(N) bound
-- **Separator Guards (990–999)** — Unique terminal tokens injected between line directions, acting as navigation barriers that prevent cross-line path corruption during recursive backtracking
+- **Node Compression** — Each node stores integer pointers (`start`/`end`) into a global text array rather than duplicated data, minimizing memory overhead.
+- **Suffix Links** — Internal shortcuts enabling $O(1)$ context shifts during tree construction, maintaining the $O(N)$ bound.
+- **Separator Guards (990–999)** — Unique terminal tokens injected between line directions, acting as navigation barriers that prevent cross-line path corruption during recursive backtracking.
 
 | Token | Assignment |
 |-------|-----------|
@@ -126,13 +126,13 @@ When a trip spans two different lines, the engine evaluates **6 major interchang
 
 | Operation | Complexity |
 |---|---|
-| Tree construction | O(N) — Ukkonen's Algorithm |
-| Direct path retrieval | O(M) — length of output route |
-| Transfer hub evaluation | O(6 × M) = O(M) |
+| Tree construction | $O(N)$ — Ukkonen's Algorithm |
+| Direct path retrieval | $O(M)$ — length of output route |
+| Transfer hub evaluation | $O(6 \times M) = O(M)$ |
 
 ---
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -174,7 +174,7 @@ cd Cairo_Metro_Navigator
 4. Go to **File → Settings → Build, Execution, Deployment → CMake**
 5. In the **CMake options** field, paste:
 
-```
+```text
 -DCMAKE_PREFIX_PATH=C:/Qt/6.10.1/mingw_64
 ```
 
@@ -185,42 +185,58 @@ cd Cairo_Metro_Navigator
 
 ### Step 4 — Build & Run
 
-```
+```text
 Build:  Ctrl + F9
 Run:    Shift + F10
 ```
 
 The application window will launch automatically.
 
-> 💡 The `metro_data.txt` file is automatically copied to the build directory by CMake — no manual file placement needed.
+> 💡 The `metro_data.txt` file is automatically copied to the build directory from the `data/` folder by CMake — no manual file placement needed.
 
 ---
 
 ## 🗂️ Project Structure
 
-```
+The project follows a clean, production-grade repository structure partitioning source implementations, public header interface files, and operational data assets:
+
+```text
 Cairo_Metro_Navigator/
-├── CMakeLists.txt          # Build configuration & Qt deployment
-├── main.cpp                # Application entry point
-├── MainWindow.cpp/.h       # Qt GUI layer & event handling
-├── MetroSystem.cpp/.h      # Routing coordinator & transfer optimizer
-├── MetroUkkonen.cpp/.h     # Suffix Tree engine (Ukkonen's Algorithm)
-├── metro_data.txt          # Station and line data (auto-copied to build)
-├── resources.qrc           # Embedded Qt resources (logo, icons)
-├── logo3.png               # Application logo
-└── screenshots/            # README screenshots
+├── .gitignore              # Specifies intentionally untracked build & IDE outputs
+├── CMakeLists.txt          # Main build configuration & Qt deployment script
+├── README.md               # Target repository documentation
+├── data/
+│   └── metro_data.txt      # Structured station dataset parsed by the routing engine
+├── include/                # Public header definitions (.h interface layer)
+│   ├── MainWindow.h
+│   ├── MetroSystem.h
+│   └── MetroUkkonen.h
+├── src/                    # Source implementation codebase (.cpp logic)
+│   ├── MainWindow.cpp
+│   ├── MetroSystem.cpp
+│   ├── MetroUkkonen.cpp
+│   ├── main.cpp
+│   ├── logo3.png           # Visual branding assets
+│   └── resources.qrc       # Embedded Qt compiled resource collections
+└── screenshots/            # Embedded visual assets for system documentation
+    ├── 01_splash.png
+    ├── 02_search.png
+    ├── 03_autocomplete.png
+    ├── 04_result_top.png
+    ├── 05_transfer.png
+    └── 06_result_bottom.png
 ```
 
 ---
 
 ## 🎯 Features
 
--  **Real-time autocomplete** — Instant station filtering as you type
--  **Direct route detection** — Single-line trips resolved in O(M) time
--  **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
--  **Trip statistics** — Travel time, station count, and fare per query
--  **Swap button** — Instantly reverse origin and destination
--  **Clean dark UI** — Qt Widgets with a modern dark green theme
+* 🔍 **Real-time autocomplete** — Instant station filtering as you type
+* 🛤️ **Direct route detection** — Single-line trips resolved in $O(M)$ time
+* 🔄 **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
+* 📊 **Trip statistics** — Travel time, station count, and tiered fare (EGP) tracking per query
+* 🔀 **Swap button** — Instantly reverse origin and destination selections
+* 🎨 **Clean dark UI** — Qt Widgets dressed in a custom responsive dark green ecosystem layout
 
 ---
 
@@ -230,27 +246,31 @@ Contributions are welcome! Here's how to get involved:
 
 1. **Fork** the repository on GitHub
 2. **Create a branch** for your feature:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+```bash
+git checkout -b feature/your-feature-name
+```
+
 3. **Commit** your changes with a clear message:
-   ```bash
-   git commit -m "Add: brief description of what you added"
-   ```
+```bash
+git commit -m "Add: brief description of what you added"
+```
+
 4. **Push** to your fork:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+```bash
+git push origin feature/your-feature-name
+```
+
 5. **Open a Pull Request** on GitHub and describe what you changed and why
 
 ### Contribution Ideas
-- Adding new metro lines or updating station data in `metro_data.txt`
-- Improving the UI styling or adding animations
-- Writing unit tests for the suffix tree engine
-- Translating the interface to Arabic
-- Optimizing the transfer hub evaluation logic
 
-> Please ensure your code follows the existing C++20 style and that the project builds cleanly before submitting a PR.
+* Adding new extension paths or updating coordinates inside `data/metro_data.txt`
+* Packaging additional custom stylesheet attributes or structural layouts
+* Designing test vectors validating boundary mechanics of the `MetroUkkonen` engine
+* Localizing language interfaces to provide native multi-dialect translations
+* Modifying processing rules evaluating transit intersections
+
+> Please ensure your code follows the existing C++20 formatting styles and builds cleanly across native target engines before filing a PR.
 
 ---
 
@@ -258,22 +278,18 @@ Contributions are welcome! Here's how to get involved:
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-You are free to use, modify, and distribute this project with attribution.
+You are free to use, modify, and distribute this project with proper attribution.
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Authors
 
-**Mariam Mohey Ibrahiem Arafa**
-Bachelor of Computer Engineering — Ain Shams University
+**Mariam Mohey Ibrahiem Arafa**  
+Bachelor of Computer Engineering — Ain Shams University  
 GitHub: [@MariamArafa-0](https://github.com/MariamArafa-0)
 
-**Eithar Diaa Amin Abd Al Aziz**
-Bachelor of Computer Engineering — Ain Shams University
+**Eithar Diaa Amin Abd Al Aziz**  
+Bachelor of Computer Engineering — Ain Shams University  
 GitHub: [@eithar25](https://github.com/eithar25)
 
 ---
-
-<div align="center">
-<sub>Built with C++20 · Qt 6.10.1 · Ukkonen's Generalized Suffix Tree · MIT License</sub>
-</div>
