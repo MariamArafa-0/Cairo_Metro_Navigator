@@ -265,7 +265,8 @@ git push origin feature/your-feature-name
 ### Contribution Ideas
 
 * Adding new extension paths or updating coordinates inside `data/metro_data.txt`
-* Packaging additional custom stylesheet attributes or structural layouts
+* Packaging additional custom stylesheet attributes or str
+* uctural layouts
 * Designing test vectors validating boundary mechanics of the `MetroUkkonen` engine
 * Localizing language interfaces to provide native multi-dialect translations
 * Modifying processing rules evaluating transit intersections
