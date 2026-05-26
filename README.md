@@ -202,11 +202,11 @@ The project follows a clean, production-grade repository structure partitioning 
 
 ```text
 Cairo_Metro_Navigator/
-├── .gitignore              # Specifies intentionally untracked build & IDE outputs
-├── CMakeLists.txt          # Main build configuration & Qt deployment script
-├── README.md               # Target repository documentation
+├── .gitignore              
+├── CMakeLists.txt         
+├── README.md              
 ├── data/
-│   └── metro_data.txt      # Structured station dataset parsed by the routing engine
+│   └── metro_data.txt      
 ├── include/                # Public header definitions (.h interface layer)
 │   ├── MainWindow.h
 │   ├── MetroSystem.h
@@ -216,9 +216,9 @@ Cairo_Metro_Navigator/
 │   ├── MetroSystem.cpp
 │   ├── MetroUkkonen.cpp
 │   ├── main.cpp
-│   ├── logo3.png           # Visual branding assets
-│   └── resources.qrc       # Embedded Qt compiled resource collections
-└── screenshots/            # Embedded visual assets for system documentation
+│   ├── logo3.png           
+│   └── resources.qrc       
+└── screenshots/            
     ├── 01_splash.png
     ├── 02_search.png
     ├── 03_autocomplete.png
