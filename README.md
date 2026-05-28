@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚇 Cairo Metro Navigator
+#  Cairo Metro Navigator
 
 ### *A high-performance transit routing engine powered by Generalized Suffix Trees*
 
@@ -14,13 +14,13 @@
 **Developed by Mariam Mohey Ibrahiem Arafa**  
 Bachelor of Computer Engineering — Ain Shams University
 
-[🚀 Getting Started](#-getting-started) · [📸 Screenshots](#-application-screenshots) · [🏗️ Architecture](#️-core-architecture) · [🤝 Contributing](#-contributing)
+[ Getting Started](#-getting-started) · [ Screenshots](#-application-screenshots) · [ Architecture](#️-core-architecture) · [ Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🗺️ Overview
+##  Overview
 
 **Cairo Metro Navigator** is a desktop application that reimagines how transit networks are computed. Instead of using the conventional graph-based approach with BFS or Dijkstra's algorithm, this project models the entire Cairo Metro network as a **continuous string sequence** indexed by a **Generalized Suffix Tree**, built using **Ukkonen's Algorithm** in strict linear time $O(N)$.
 
@@ -28,7 +28,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## 📈 Why This Project Matters
+##  Why This Project Matters
 
 | Traditional Graph Navigation | Cairo Metro Navigator |
 |---|---|
@@ -41,7 +41,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## 📸 Application Screenshots
+##  Application Screenshots
 
 ### Splash Screen
 <div align="center">
@@ -91,7 +91,7 @@ This is not just a navigation app — it is a proof of concept demonstrating tha
 
 ---
 
-## 🏗️ Core Architecture
+##  Core Architecture
 
 ### The Suffix Tree Data Engine (`MetroUkkonen`)
 
@@ -132,7 +132,7 @@ When a trip spans two different lines, the engine evaluates **6 major interchang
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -141,7 +141,7 @@ When a trip spans two different lines, the engine evaluates **6 major interchang
 | Qt Framework | **6.10.1** | [qt.io/download](https://www.qt.io/download-open-source) |
 | CLion IDE | Any recent version | [jetbrains.com/clion](https://www.jetbrains.com/clion/) |
 
-> ⚠️ **Important:** During Qt installation, make sure to select **MinGW 13.1.0 64-bit** — it is bundled inside the Qt installer, no separate download needed.
+>  **Important:** During Qt installation, make sure to select **MinGW 13.1.0 64-bit** — it is bundled inside the Qt installer, no separate download needed.
 
 ---
 
@@ -150,9 +150,9 @@ When a trip spans two different lines, the engine evaluates **6 major interchang
 1. Download the Qt Online Installer from [qt.io](https://www.qt.io/download-open-source)
 2. Run the installer and sign in (free Qt account required)
 3. Under **Qt 6.10.1**, check:
-   - ✅ `MinGW 13.1.0 64-bit`
+   -  `MinGW 13.1.0 64-bit`
 4. Under **Developer and Designer Tools**, check:
-   - ✅ `MinGW 13.1.0 64-bit`
+   -  `MinGW 13.1.0 64-bit`
 5. Complete the installation — default path will be `C:\Qt\`
 
 ---
@@ -192,11 +192,11 @@ Run:    Shift + F10
 
 The application window will launch automatically.
 
-> 💡 The `metro_data.txt` file is automatically copied to the build directory from the `data/` folder by CMake — no manual file placement needed.
+>  The `metro_data.txt` file is automatically copied to the build directory from the `data/` folder by CMake — no manual file placement needed.
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 The project follows a clean, production-grade repository structure partitioning source implementations, public header interface files, and operational data assets:
 
@@ -229,18 +229,18 @@ Cairo_Metro_Navigator/
 
 ---
 
-## 🎯 Features
+##  Features
 
-* 🔍 **Real-time autocomplete** — Instant station filtering as you type
-* 🛤️ **Direct route detection** — Single-line trips resolved in $O(M)$ time
-* 🔄 **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
-* 📊 **Trip statistics** — Travel time, station count, and tiered fare (EGP) tracking per query
-* 🔀 **Swap button** — Instantly reverse origin and destination selections
-* 🎨 **Clean dark UI** — Qt Widgets dressed in a custom responsive dark green ecosystem layout
+*  **Real-time autocomplete** — Instant station filtering as you type
+*  **Direct route detection** — Single-line trips resolved in $O(M)$ time
+*  **Automatic transfer optimization** — Multi-line trips with mathematically optimal hub selection
+*  **Trip statistics** — Travel time, station count, and tiered fare (EGP) tracking per query
+*  **Swap button** — Instantly reverse origin and destination selections
+*  **Clean dark UI** — Qt Widgets dressed in a custom responsive dark green ecosystem layout
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Here's how to get involved:
 
@@ -275,7 +275,7 @@ git push origin feature/your-feature-name
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
@@ -283,7 +283,7 @@ You are free to use, modify, and distribute this project with proper attribution
 
 ---
 
-## 👩‍💻 Authors
+##  Authors
 
 **Mariam Mohey Ibrahiem Arafa**  
 Bachelor of Computer Engineering — Ain Shams University  
